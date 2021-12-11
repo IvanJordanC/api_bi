@@ -3,7 +3,7 @@ USE bioreactor_api;
 
 CREATE TABLE fechas(
 	id SERIAL PRIMARY KEY,
-	fecha DATE
+	fecha TIMESTAMP
 );
 CREATE TABLE ph(
 	id SERIAL PRIMARY KEY,

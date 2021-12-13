@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 //Puerto
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 //Routes
 app.use(require('./routes/index'));

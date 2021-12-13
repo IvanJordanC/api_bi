@@ -1,5 +1,5 @@
-CREATE DATABASE bioreactor_api;
-USE bioreactor_api;
+CREATE DATABASE bddbi;
+USE bddbi;
 
 CREATE TABLE fechas(
 	id SERIAL PRIMARY KEY,

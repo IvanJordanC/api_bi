@@ -1,12 +1,14 @@
 const {Pool} = require('pg');
 
 const pool = new Pool({
-    host: 'ec2-3-229-166-245.compute-1.amazonaws.com',
-    user: 'qqbzfmsmqbkqoc',
-    password: '306c8aea0158fa0683adb1aabb240552c141be1c1decd77382381d128832c1ae',
-    database: 'dacr845ida7oki',
+    host: 'localhost',
+    user: 'postgres',
+    password: 'test5432',
+    database: 'bddbi',
     port: '5432'
 })
+
+
 //
 const getData = async(req,res)=>{
     const response = await pool.query('SELECT fecha,ph,temperatura FROM fechas f, ph p, temperature t WHERE f.id=p.id AND t.id=p.id ORDER BY f.id desc');

@@ -2,8 +2,6 @@ const { Router }=require('express');
 const { route } = require('express/lib/application');
 const router = Router();
 
-route.get('/', (req,res)=>res.send('Hello World'));
-
 const {
     getDates,
     getPHs,

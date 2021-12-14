@@ -9,7 +9,8 @@ const {
     createFecha,
     createPH,
     createTemperatura,
-    getData
+    getData,
+    createData
 } = require('../controllers/index.controller');
 
 router.get('/dates',getDates);
@@ -20,6 +21,8 @@ router.post('/ph',createPH);
 
 router.get('/temperature',getTemperaturas);
 router.post('/temperature',createTemperatura);
+
+router.post('/data',createData);
 
 router.get('/data',getData);
 

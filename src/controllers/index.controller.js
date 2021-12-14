@@ -2,9 +2,9 @@ const {Pool} = require('pg');
 
 const pool = new Pool({
     host: 'localhost',
-    user: 'postgres',
-    password: '',
-    database: 'bddbi',
+    user: 'ubuntu',
+    password: 'ubuntu5432.',
+    database: 'bdd_bi',
     port: '5432'
 })
 
@@ -29,6 +29,24 @@ const getTemperaturas = async(req,res)=>{
     const response = await pool.query('SELECT * FROM temperature');
     res.status(200).json(response.rows);
 }
+
+
+const createData = async(req,res)=>{
+    const {DateTime,ph,temperature} = req.body;
+
+    const responseDate = await pool.query('INSERT INTO fechas(fecha) VALUES($1)',[DateTime]);
+    const responsePH = await pool.query('INSERT INTO ph(pH) VALUES($1)',[ph]);
+    const responseTemp = await pool.query('INSERT INTO temperature(temperatura) VALUES($1)',[temperature]);
+    res.json({
+        message: "Data created",
+        body:{
+            date:{DateTime},
+            ph:{ph},
+            temperature:{temperature}
+        }
+    });
+}
+
 
 const createFecha = async(req,res)=>{
     const{DateTime}=req.body;
@@ -100,5 +118,6 @@ module.exports = {
     createFecha,
     createPH,
     createTemperatura,
-    getData
+    getData,
+    createData
 }

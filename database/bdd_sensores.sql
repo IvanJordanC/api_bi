@@ -13,3 +13,8 @@ CREATE TABLE temperature(
 	id SERIAL PRIMARY KEY,
 	temperatura FLOAT
 );
+
+/*
+DROP TABLE fechas;
+DROP TABLE ph;
+DROP TABLE temperature;*/
